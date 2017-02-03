@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WebApplication1.Models.Brand>
+
+@{
+    ViewBag.Title = "All Brands";
+}
+<!-- vvv Coffee Table vvv -->
+    @foreach (var item in Model)
+    {
+        <div class="one-third column">
+            <br />
+            <img class="image" id="imgFromDB" src="@Url.Action("GetBrandImage", "Brand", new { BrandID = item.BrandID })" onclick="location.href ='@Url.Action("Details", "Brand", new { id = item.BrandID })'" /><br />
+            @item.Name<br />
+        </div>
+    }

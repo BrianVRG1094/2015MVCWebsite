@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Coffee
+    <table class="coffee-table">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.BrandID)</td>
+            <td>@Html.DisplayFor(model => model.BrandID) (@{Html.RenderAction("GetBrandName", new { BrandID = Model.BrandID });})</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Name)</td>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.PhotoFile)</td>
+            <td><img style="width:250px; height:250px;" src="@Url.Action("GetCoffeeImage", "Coffee", new { CoffeeID = Model.CoffeeID })" /></td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Description)</td>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.UserName)</td>
+            <td>@Html.DisplayFor(model => model.UserName)</td>
+        </tr>
+    </table>
+    <div><p>&nbsp;</p></div>
+    <p class="coffee-links">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CoffeeID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.CoffeeID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

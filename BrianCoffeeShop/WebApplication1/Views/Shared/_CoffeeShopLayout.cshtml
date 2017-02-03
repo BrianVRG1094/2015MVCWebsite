@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/base.css")
+    @Styles.Render("~/Content/skeleton.css")
+    @Styles.Render("~/Content/layout.css")
+</head>
+<body>
+    <div class="sixteen columns">
+    <!-- vvv Header Bar vvv-->
+    <div>
+        <nav class="container primary">
+            <div class="sixteen columns">
+                <div class="seven columns offset-by-four">
+                    <img height="350" width="450" src="~/Content/images/Brian_Shop_Logo.png" />
+                </div>
+            </div>
+            <br />
+            <div class="sixteen columns">
+                <div class="ten columns offset-by-three">
+                    <ul>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Coffees", "Index", "Coffee")</li>
+                        <li>@Html.ActionLink("Brands", "Index", "Brand")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+        <div><p>&nbsp;</p></div>
+
+
+    <!-- vvv Page Content vvv-->
+        <div class="container coffee-container" >
+            @RenderBody()
+        </div>
+
+    <!-- vvv Footer Bar vvv-->
+        <div><p>&nbsp;</p></div><br />
+    <div style="background-color:rgba(0,0,0,0.6); padding:10px; color:white; font-size:16px;">
+        <table style="margin:0 auto; text-align:center; padding-top:20px; border-bottom:2px solid lightgray">
+            <tr>
+                <th>Website Created By</th>
+            </tr>
+            <tr>
+                <td>Brian</td>
+            </tr>
+        </table>
+        <br />
+        <table style="margin:0 auto;">
+            <tr>
+                <td style="font-weight:bold">Contact Name: </td>
+                <td>Brian Rivera</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">Phone Number: </td>
+                <td>(888) 888-8888</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">E-mail: </td>
+                <td><a href="mailto:fakename.fake@fake.com?Subject=Awesome Site, Brian!" target="_top" style="color:orange;">brian.notreal@fake.com</a></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

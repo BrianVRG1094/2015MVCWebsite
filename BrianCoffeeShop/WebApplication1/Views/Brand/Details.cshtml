@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.Brand
+    <table class="coffee-table">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.BrandID)</td>
+            <td>@Html.DisplayFor(model => model.BrandID)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Name)</td>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.PhotoFile)</td>
+            <td><img style="width:250px; height:250px;" src="@Url.Action("GetBrandImage", "Brand", new { BrandID = Model.BrandID })" /></td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Description)</td>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+    </table>
+    <div><p>&nbsp;</p></div>
+    <p class="coffee-links">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BrandID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.BrandID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
